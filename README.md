@@ -170,3 +170,86 @@ print("Hello",Name)
 
 ## Function and Name Space in Python
 [Functions in Python](https://www.c-sharpcorner.com/UploadFile/75a48f/python-function/)
+
+## Lambda Function or Anonymous Function in Python
+**Syntax**
+```Python
+lambda arguments: expression
+```
+
+**Example**
+```Python
+double = lambda x: x * 2
+
+lst = [1,2,3,4,5,6,7,8,9,10]
+EvenData=list(filter(lambda x: (x%2 == 0) , lst))
+
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+new_list = list(map(lambda x: x * 2 , my_list))
+```
+
+## Module in Python 
+- Creating Module 
+Saving a file with function or a class and we can use that file in different-2 places
+- Importing 
+import keyword we use to import anything from the file. We can use `as` and `from` keyword while importing 
+```python
+from math import pi
+import math as m
+```
+
+### Python Module Search Path
+While importing a module, Python looks at several places. Interpreter first looks for a built-in module then (if not found) into a list of directories defined in sys.path. The search is in this order.
+
+The current directory.
+`PYTHONPATH` (an environment variable with a list of directory).
+The installation-dependent default directory.
+
+```Python
+import sys
+sys.path
+```
+
+### Reloading Module
+To reload you can't use import many times you can use reload method of *imp* module 
+
+```Python
+import imp
+import moduleName
+imp.reload(moduleName)
+```
+
+### dir function
+We can use the dir() function to find out names that are defined inside a module.
+```Python
+import math
+dir(math)
+```
+
+## Working with file 
+1. Open a file
+2. Read or write (perform operation)
+3. Close the file
+
+### Open
+```Python
+f = open("FileName");
+```
+### Python File Mode
+|Mode|Description|
+|-|-|
+| 'r' | Open a file for reading. (default)|
+| 'w' | Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.|
+| 'x' | Open a file for exclusive creation. If the file already exists, the operation fails.|
+| 'a' | Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.|
+| 't' | Open in text mode. (default)|
+| 'b' | Open in binary mode.|
+| '+' | Open a file for updating (reading and writing)|
+
+```Python
+f = open("FileName",'w')
+f = open("FileName",'r+b')
+```
+```Python
+f.close()
+```
