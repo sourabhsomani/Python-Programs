@@ -1,5 +1,3 @@
-[TOC]
-
 # Python-Programs
 Python Basics Programs 
 
